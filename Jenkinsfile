@@ -3,4 +3,5 @@ node('jenkins_agent_ansible'){
         sh 'date'
         echo 'Hello world1'
     }
+    
 }
