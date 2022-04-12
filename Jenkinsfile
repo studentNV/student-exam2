@@ -1,4 +1,4 @@
-node('jenkins_agent'){
+node('focused_payne'){
     stage('start_unit_test'){
         sh '''cd /opt/student-exam2
         . venv/bin/activate
