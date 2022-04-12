@@ -1,8 +1,13 @@
-node('jenkins_agent_ansible'){
-    stage('build'){
-        sh 'date'
+node('jenkins_agent'){
+    stage('start_unit_test'){
+        sh '''cd /opt/student-exam2
+        . venv/bin/activate
+        pip install -e '.[test]'
+        coverage run -m pytest
+        coverage report
+        '''
     }
     stage('start_unit_test'){
-        sh 'pip install -e '.[test]''
-    }  
+        def image = docker.build("web")
+    }
 }
