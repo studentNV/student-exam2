@@ -41,6 +41,5 @@ pipeline {
                 sh 'sudo docker push studentnv/exam2:web_app'
             }
         }
-    } 
-    
+    }
 }
