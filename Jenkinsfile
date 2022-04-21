@@ -6,13 +6,10 @@ pipeline {
     stages {
         stage('pull_rep') {
             steps {
-                sh '''
-                cd /opt/student-exam2
-                git pull origin master
-                '''
+                sh ' cd /opt/student-exam2 && git pull origin master '
             }
         }
-        stage('start_unit_test') {
+        stage('start_unit_tests') {
             steps {
                 sh '''
                 cd /opt/student-exam2
@@ -25,10 +22,7 @@ pipeline {
         }
         stage('build_docker_app') {
             steps {
-                sh '''
-                cd /opt/student-exam2
-                    sudo docker build -t exam2:web_app .
-                '''
+                sh ' cd /opt/student-exam2 && sudo docker build -t exam2:web_app . '
             }
         }
         stage('login_dockerhub') {
