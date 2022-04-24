@@ -14,7 +14,6 @@ pipeline {
                 sh '''
                 cd /opt/student-exam2
                 . venv/bin/activate
-                pip install -e '.[test]'
                 coverage run -m pytest
                 coverage report
                 '''
