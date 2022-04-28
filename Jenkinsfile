@@ -17,6 +17,13 @@ pipeline {
                 cd /opt/student-exam2
                 . venv/bin/activate
                 coverage run -m pytest
+                '''
+            }
+            steps {
+                echo '> Start unit tests.'
+                sh '''
+                cd /opt/student-exam2
+                . venv/bin/activate
                 coverage report
                 '''
             }
